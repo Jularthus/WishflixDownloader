@@ -1,12 +1,13 @@
 import os
+from chemin import dir
 
 def downloadList(list, name, season):
     curdir = os.getcwd()
-    dir = rf"Y:/Films Jules/Séries/{name}/{season}"
+    dir = dir + f"/{name}/{season}"
     try:
         os.chdir(dir) 
     except:
-        os.makedirs(rf"Y:/Films Jules/Séries/{name}/{season}")
+        os.makedirs(dir)
 
     os.chdir(curdir)
     for i in range(len(list)):
